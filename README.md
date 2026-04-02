@@ -1,2 +1,2 @@
 # My-main-actions
-to test git hub actions
+to test github actions
