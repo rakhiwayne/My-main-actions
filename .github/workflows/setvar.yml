@@ -12,13 +12,10 @@ jobs:
       - name: display-var
         run: |
           echo "$MY_VAL"
-  setup-job:
-    uses: actions/setup-python@v5
-    with:
-      python_version : 3.12
-      
-  print-job:
-    runs-on: ubuntu-latest
-    steps:
+    
+      - name: setup-job
+        uses: actions/setup-python@v5
+        with:
+          python_version : 3.12
       - name: test-var
         run: python print_py.py
