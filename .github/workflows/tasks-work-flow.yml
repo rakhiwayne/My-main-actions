@@ -32,7 +32,18 @@ jobs:
         run: |
           echo "the api_key length is ${#api_key} chars"
           python app.py
-          cat test_data_saved/api_octocat.json
+        #   cat test_data_saved/api_octocat.json
+      - name: check for new changes
+        run: |
+          git config user.name 'github-actions'
+          git config user.email 'github-actions@github.com'
+          git add.
+          git diff --staged || echo 'new_changes=true' >> $GITHUB_ENV
+      - name: commit if new changes for repo
+        if: env.new_changes=='true'
+        run: |
+          git commit -m 'new changes by workflow'
+          git push
         
          
 
