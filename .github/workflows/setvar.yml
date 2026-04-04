@@ -1,6 +1,10 @@
 name: Set var test
 
-on: [push]
+on: 
+  push:
+  schedule:
+    - cron: '13 22 * * *'
+
 
 jobs:
   var-job:
