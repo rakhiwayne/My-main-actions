@@ -3,7 +3,7 @@ name: Set var test
 on: 
 #   push:
   schedule:
-    - cron: '15 22 * * *'
+    - cron: '49 16 * * *'
 
 
 jobs:
