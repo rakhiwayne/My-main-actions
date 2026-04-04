@@ -2,8 +2,9 @@ name: Set var test
 
 on: 
 #   push:
+  workflow_dispatch:
   schedule:
-    - cron: '49 16 * * *'
+    - cron: '30 9 * * *'
 
 
 jobs:
