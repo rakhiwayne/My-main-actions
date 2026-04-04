@@ -15,7 +15,7 @@ jobs:
       - name: access repo
         uses: actions/checkout@v5
         with:
-          token: ${{secrets.TESTING_TOKEN1}}
+        #   token: ${{secrets.TESTING_TOKEN1}}
           persist-credentials: true
       - name: print Hello GitHub Actions
         run: echo "Hello GitHub Actions"
@@ -24,6 +24,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.9'
+          cache: 'pip'
       - name: print python version
         run: |
           python --version
