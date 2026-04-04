@@ -12,3 +12,12 @@ jobs:
       - name: display-var
         run: |
           echo "$MY_VAL"
+  print-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: test-var
+        run: |
+          echo "MY_VAL = Hello_mars" >> $GITHUB_ENV
+      - name: display-test-var
+        run: |
+          echo "$MY_VAL"
