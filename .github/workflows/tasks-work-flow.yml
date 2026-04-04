@@ -17,8 +17,7 @@ jobs:
           python-version: '3.9'
       - name: print python version
         run: |
-         echo "python --version
-         python --version"
+          python --version"
          
 
 
