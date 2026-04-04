@@ -1,9 +1,9 @@
 name: Set var test
 
 on: 
-  push:
+#   push:
   schedule:
-    - cron: '13 22 * * *'
+    - cron: '15 22 * * *'
 
 
 jobs:
