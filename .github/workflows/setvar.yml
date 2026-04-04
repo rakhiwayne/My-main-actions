@@ -22,9 +22,9 @@ jobs:
         run: |
           echo "$MY_VAL"
     
-      - name: setup-job
-        uses: actions/setup-python@v5
-        with:
-          python_version : 3.12
+      # - name: setup-job
+      #   uses: actions/setup-python@v5
+      #   with:
+      #     python-version : 3.12
       - name: test-var
         run: python print_py.py
