@@ -6,6 +6,10 @@ jobs:
   var-job:
     runs-on: ubuntu-latest
     steps:
+      - name: Check repo content
+        uses: actions/checkout@v4
+        with:
+          token : ${{secrets.TESTING_TOKEN1}}
       - name: set-var
         run: |
           echo "MY_VAL = Hello_mars" >> $GITHUB_ENV
