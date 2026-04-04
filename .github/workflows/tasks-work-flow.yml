@@ -9,12 +9,14 @@ on:
 jobs:
   task:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: access repo
         uses: actions/checkout@v5
         with:
           token: ${{secrets.TESTING_TOKEN1}}
-        #   persist-credentials: true
+          persist-credentials: true
       - name: print Hello GitHub Actions
         run: echo "Hello GitHub Actions"
 
