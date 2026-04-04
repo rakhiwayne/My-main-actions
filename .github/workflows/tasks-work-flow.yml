@@ -38,10 +38,11 @@ jobs:
           git config user.name 'github-actions'
           git config user.email 'github-actions@github.com'
           git add .
-          git diff --staged || echo 'new_changes=true' >> $GITHUB_ENV
+          git diff --staged --quiet|| echo 'new_changes=true' >> $GITHUB_ENV
       - name: commit if new changes for repo
         if: env.new_changes=='true'
         run: |
+          echo '$new_changes'
           git commit -m 'new changes by workflow'
           git push
         
