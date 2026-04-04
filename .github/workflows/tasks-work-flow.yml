@@ -22,7 +22,7 @@ jobs:
       - name: print python version
         run: |
           python --version
-          api_key = ${{secrets.print_key}} >> $GITHUB_ENV
+          echo "api_key=${{secrets.print_key}}" >> $GITHUB_ENV
     #   - name: Install dependencies
     #     run: pip install -r requirements.txt
       - name: run python
