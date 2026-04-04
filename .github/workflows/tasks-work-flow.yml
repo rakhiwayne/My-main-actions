@@ -3,6 +3,8 @@ name: Task-from-Chat_GPT
 on:
   push:
   workflow_dispatch:
+  schedule:
+    - cron: 30 9 * * *
 
 jobs:
   task:
@@ -23,12 +25,14 @@ jobs:
         run: |
           python --version
           echo "api_key=${{secrets.print_key}}" >> $GITHUB_ENV
-    #   - name: Install dependencies
-    #     run: pip install -r requirements.txt
+          echo "url=https://api.github.com/users/octocat" >> $GITHUB_ENV
+      - name: Install dependencies
+        run: pip install -r requirements.txt
       - name: run python
         run: |
           echo "the api_key length is ${#api_key} chars"
           python app.py
+          cat test_data_saved/api_octocat.json
         
          
 
