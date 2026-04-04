@@ -17,7 +17,7 @@ jobs:
           python-version: '3.9'
       - name: print python version
         run: |
-          python --version"
+          python --version
          
 
 
