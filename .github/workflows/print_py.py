@@ -1,0 +1,1 @@
+print('Hello Rakesh!, I am a script from GIT repo')
