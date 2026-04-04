@@ -1,0 +1,12 @@
+name: Task-from-Chat_GPT
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  task1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print Hello GitHub Actions
+        run: echo "Hello GitHub Actions"
