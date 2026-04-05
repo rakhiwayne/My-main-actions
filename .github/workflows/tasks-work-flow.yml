@@ -1,7 +1,7 @@
 name: Task-from-Chat_GPT
 
 on:
-  push:
+#   push:
   workflow_dispatch:
   schedule:
     - cron: 30 9 * * *

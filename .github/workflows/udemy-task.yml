@@ -1,0 +1,19 @@
+name: Udemy Task 
+
+on: 
+  push:
+  workflow_dispatch:
+
+jobs:
+  pra1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello_world
+        run: |
+          echo 'Hello_World!'
+  pra2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: goodbye
+        run: |
+          echo 'Goodbye!'  
