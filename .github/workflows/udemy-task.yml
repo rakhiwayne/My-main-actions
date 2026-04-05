@@ -16,7 +16,7 @@ jobs:
     steps:
       - name: goodbye
         run: |
-          echo 'Goodbye!'  
-          exit 1
+          echo 'Goodbye! with exit0'  
+          exit 0
       - name: exit
-        run: echo "No exit"
+        run: echo "I have exit0"
