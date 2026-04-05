@@ -1,7 +1,7 @@
 name: Udemy Task 
 
 on: 
-#   push:
+  push:
   workflow_dispatch:
 #   pull_request:
   schedule:
@@ -37,3 +37,11 @@ jobs:
           ls
           echo "${{github.event_name}}"
           echo "$RUNNER_OS"
+      - name: install deps
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+      - name:
+        run: |
+          cd using_actions_react/react-app/
+          npm ci
