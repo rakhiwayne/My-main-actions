@@ -1,8 +1,11 @@
 name: Udemy Task 
 
 on: 
-#   push:
+  push:
   workflow_dispatch:
+  pull_request:
+  schedule:
+    - cron: 0 13 * * *
 
 jobs:
   pra1:
@@ -20,3 +23,9 @@ jobs:
           exit 0
       - name: exit
         run: echo "I have exit0"
+  pra3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: event-print
+        run: |
+          echo "${{github.event_name}}"
