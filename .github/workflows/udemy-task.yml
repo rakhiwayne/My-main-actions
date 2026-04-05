@@ -1,7 +1,7 @@
 name: Udemy Task 
 
 on: 
-  push:
+#   push:
   workflow_dispatch:
 #   pull_request:
   schedule:
@@ -47,4 +47,5 @@ jobs:
           npm ci
       - name: run tests
         run: |
+          cd using_actions_react/react-app/
           npm run test
