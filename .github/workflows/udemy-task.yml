@@ -19,7 +19,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Hello_world
-        if: inputs.debug == true
+        if: inputs.debug == true && github.ref == 'refs/heads/test'
         run: |
           echo 'Hello_World!'
           echo "$RUNNER_OS"
