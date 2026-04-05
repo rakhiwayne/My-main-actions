@@ -1,23 +1,28 @@
 name: Udemy Task 
 
 on: 
-#   push:
+  push:
   workflow_dispatch:
-  pull_request:
-    types: [ opened,synchronize]
-    branches:
-      - test
+    inputs:
+      debug:
+        type: boolean
+        default: false
+#   pull_request:
+#     types: [ closed,synchronize]
+#     branches:
+#       - main
   schedule:
     - cron: '45 13 * * *'
 
 jobs:
-#   pra1:
-#     runs-on: ubuntu-latest
-#     steps:
-#       - name: Hello_world
-#         run: |
-#           echo 'Hello_World!'
-#           echo "$RUNNER_OS"
+  pra1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Hello_world
+        if: inputs.debug == true && github.ref == 'refs/heads/test'
+        run: |
+          echo 'Hello_World!'
+          echo "$RUNNER_OS"
 #   pra2:
 #     runs-on: ubuntu-latest
 #     steps:
@@ -30,25 +35,32 @@ jobs:
 #         run: |
 #           echo "I have exit0"
 #           echo "$RUNNER_OS"
-  pra3:
-    runs-on: ubuntu-latest
-    steps:
-      - name: event-print
-        uses: actions/checkout@v5
-      - name: runs
-        run: |
-          ls
-          echo "${{github.event_name}}"
-          echo "$RUNNER_OS"
-      - name: install deps
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20.x'
-      - name:
-        run: |
-          cd using_actions_react/react-app/
-          npm ci
-      - name: run tests
-        run: |
-          cd using_actions_react/react-app/
-          npm run test
+#   pra3:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: event-print
+#         uses: actions/checkout@v5
+#       - name: runs
+#         run: |
+#           ls
+#           echo "event_name: ${{github.event_name}}"
+#           echo "REF: ${{github.ref}}"
+#           echo "SHA: ${{github.sha}}"
+#           echo "Actor : ${{github.actor}}"
+#           echo "Workflow: ${{github.workflow}}"
+#           echo "RUN ID : ${{github.run_id}}"
+#           echo "RUN NUMBER : ${{github.run_number}}"
+#           echo "repo MY_VAR : ${{vars.MY_VAR}}"
+#           echo "$RUNNER_OS"
+    #   - name: install deps
+    #     uses: actions/setup-node@v4
+    #     with:
+    #       node-version: '20.x'
+    #   - name:
+    #     run: |
+    #       cd using_actions_react/react-app/
+    #       npm ci
+    #   - name: run tests
+    #     run: |
+    #       cd using_actions_react/react-app/
+    #       npm run test
