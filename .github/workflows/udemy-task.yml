@@ -1,7 +1,7 @@
 name: Udemy Task 
 
 on: 
-  push:
+#   push:
   workflow_dispatch:
 
 jobs:
