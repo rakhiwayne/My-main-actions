@@ -14,7 +14,7 @@ jobs:
       - name: Hello_world
         run: |
           echo 'Hello_World!'
-          echo 'env.RUNNER_OS'
+          echo '$RUNNER_OS'
   pra2:
     runs-on: windows-latest
     steps:
@@ -23,13 +23,14 @@ jobs:
           echo 'Goodbye! with exit0'  
           exit 0
       - name: exit
+        shell: bash
         run: |
           echo "I have exit0"
-          echo "env.RUNNER_OS"
+          echo "$RUNNER_OS"
   pra3:
     runs-on: macos-latest
     steps:
       - name: event-print
         run: |
           echo "${{github.event_name}}"
-          echo 'env.RUNNER_OS'
+          echo '$RUNNER_OS'
