@@ -17,5 +17,6 @@ jobs:
       - name: goodbye
         run: |
           echo 'Goodbye!'  
+          exit 1
       - name: exit
         run: echo "No exit"
